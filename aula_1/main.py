@@ -1,10 +1,12 @@
 # desafio
 
 nome = input('Digite seu nome: ')
-salario = int(input('Digite o valor do seu salario: '))
+salario = input('Digite o valor do seu salario: ')
 pctBonus = int(input('Digite sua porcentagem de bonus: '))
 
-
-valor_do_bonus = 1000 + salario * pctBonus
-print(f'O seu bonus esse meês é {valor_do_bonus} reais')
->>>>>>> b595452 (Primeiro desafio)
+try:
+    valor_do_bonus = 1000 + salario * pctBonus
+    print(f'O seu bonus esse mês é {valor_do_bonus} reais')
+except TypeError:
+    print('O salario e o percentual precisam ser apenas numeros')
+    print('Tente novamente')
