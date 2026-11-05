@@ -65,11 +65,15 @@ print(contar_caracteres("abracadabra"))
 """ Exercício 4: Inversão de Chaves e Valores
 Objetivo: Iteração sobre .items() e tratamento de colisões.
 
-Enunciado: Crie uma função inverter_dicionario(dicionario) que inverta as chaves e os valores de um dicionário. Como múltiplos valores originais podem ser idênticos, os valores do novo dicionário devem ser listas contendo todas as chaves correspondentes.
+Enunciado: Crie uma função inverter_dicionario(dicionario) que inverta as chaves e os valores 
+de um dicionário. Como múltiplos valores originais podem ser idênticos, os valores do novo dicionário
+devem ser listas contendo todas as chaves correspondentes.
 
 Exemplo de Entrada: {'a': 1, 'b': 2, 'c': 1, 'd': 3}
 
 Exemplo de Saída: {1: ['a', 'c'], 2: ['b'], 3: ['d']} """
+
+
 
 ####################################################################
 
