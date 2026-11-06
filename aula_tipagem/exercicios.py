@@ -73,6 +73,21 @@ Exemplo de Entrada: {'a': 1, 'b': 2, 'c': 1, 'd': 3}
 
 Exemplo de Saída: {1: ['a', 'c'], 2: ['b'], 3: ['d']} """
 
+#%%
+dicionario = {'a': 1, 'b': 2, 'c': 1, 'd': 3}
+invertido = {}
+
+def inverte_dicionario(dicionario):
+    invertido = {}
+    for chave, valor in dicionario.items():
+        if valor not in invertido:
+            invertido[valor] = [chave]
+        else:
+            invertido[valor].append(chave)
+
+    print(invertido)
+
+inverte_dicionario(dicionario)
 
 
 ####################################################################
@@ -220,3 +235,4 @@ Python
     "removidos": {"c": {"status": "ok"}},
     "modificados": {"a": (1, 2)}
 } """
+# %%
