@@ -130,15 +130,16 @@ def soma_estoque(loja_1, loja_2):
 soma_estoque(loja_A, loja_B)
 
 
-
-
-
 ####################################################################
 
 """ Exercício 6: Agrupamento por Categoria (List of Dicts)
 Objetivo: Manipular listas aninhadas e estruturas agrupadas.
 
-Enunciado: Dada uma lista de dicionários representando produtos (cada um com 'nome', 'preco' e 'categoria'), crie uma função agrupar_por_categoria(produtos) que retorne um dicionário onde cada chave é uma categoria e o valor é uma lista apenas com os nomes dos produtos daquela categoria.
+Enunciado: Dada uma lista de dicionários representando produtos
+(cada um com 'nome', 'preco' e 'categoria'), crie uma função 
+agrupar_por_categoria(produtos) que retorne um dicionário onde cada chave
+é uma categoria e o valor é uma lista apenas com os nomes dos produtos daquela
+categoria.
 
 Exemplo de Entrada:
 
@@ -155,6 +156,23 @@ Python
     "Eletrônicos": ["Notebook", "Mouse"],
     "Vestuário": ["Camiseta"]
 } """
+
+produtos = [
+    {"nome": "Notebook", "preco": 3500, "categoria": "Eletrônicos"},
+    {"nome": "Camiseta", "preco": 60, "categoria": "Vestuário"},
+    {"nome": "Mouse", "preco": 120, "categoria": "Eletrônicos"},
+]
+
+dicionario_final = {}
+
+for dict in produtos:
+    if dict['categoria'] not in dicionario_final:
+        dicionario_final[dict['categoria']] = [dict['nome']]
+    else:
+        dicionario_final[dict['categoria']].append(dict['nome'])
+
+print(dicionario_final)
+
 
 ####################################################################
 
