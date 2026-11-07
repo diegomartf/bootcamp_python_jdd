@@ -73,7 +73,6 @@ Exemplo de Entrada: {'a': 1, 'b': 2, 'c': 1, 'd': 3}
 
 Exemplo de Saída: {1: ['a', 'c'], 2: ['b'], 3: ['d']} """
 
-#%%
 dicionario = {'a': 1, 'b': 2, 'c': 1, 'd': 3}
 invertido = {}
 
@@ -95,7 +94,11 @@ inverte_dicionario(dicionario)
 """ Exercício 5: Mesclagem e Consolidação de Estoques
 Objetivo: Combinar múltiplos dicionários com regras de atualização.
 
-Enunciado: Você tem duas filiais com inventários de produtos no formato {"item": quantidade}. Escreva uma função consolidar_estoques(estoque_a, estoque_b) que combine ambos os dicionários somando as quantidades de itens que aparecem em ambas as lojas.
+Enunciado: Você tem duas filiais com inventários de produtos no
+formato {"item": quantidade}. Escreva uma função
+consolidar_estoques(estoque_a, estoque_b) que combine ambos
+os dicionários somando as quantidades de itens que aparecem em
+ambas as lojas.
 
 Exemplo de Entrada:
 
@@ -106,6 +109,29 @@ Loja B: {"mouse": 5, "fone": 12, "monitor": 2}
 Exemplo de Saída:
 
 {"teclado": 10, "mouse": 20, "monitor": 6, "fone": 12} """
+
+
+loja_A =  {"teclado": 10, "mouse": 15, "monitor": 4}
+
+loja_B = {"mouse": 5, "fone": 12, "monitor": 2}
+
+def soma_estoque(loja_1, loja_2):
+    estoque_total = {}
+
+    for chave,valor in loja_1.items():
+        estoque_total[chave] = valor
+
+    for chave,valor in loja_2.items():
+        if chave in estoque_total:
+            estoque_total[chave] += valor
+
+    print(estoque_total)
+
+soma_estoque(loja_A, loja_B)
+
+
+
+
 
 ####################################################################
 
