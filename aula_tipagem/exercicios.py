@@ -179,7 +179,10 @@ print(dicionario_final)
 """ Exercício 7: Aplainamento de Dicionário Profundo (Flatten Dict)
 Objetivo: Recursão e manipulação de árvores de chaves.
 
-Enunciado: Crie uma função recursiva achatar_dicionario(dados, separador='.') que receba um dicionário com níveis aninhados arbitrários e o transforme em um dicionário plano de apenas um nível, concatenando as chaves aninhadas com o separador.
+Enunciado: Crie uma função recursiva achatar_dicionario(dados, separador='.')
+que receba um dicionário com níveis aninhados arbitrários e o transforme em
+um dicionário plano de apenas um nível, concatenando as chaves aninhadas com
+o separador.
 
 Exemplo de Entrada:
 
@@ -203,7 +206,35 @@ Python
     "usuario.perfil.ativo": True,
     "versao": "1.0"
 } """
+#%%
+dados = {
+    "usuario": {
+        "id": 1,
+        "perfil": {
+            "cidade": "São Paulo",
+            "ativo": True
+        }
+    },
+    "versao": "1.0"
+}
 
+def achatar_dicionario(dados, separador='.', prefixo = ''):
+    
+    resultado= {}
+
+    for chave, valor in dados.items():
+        nova_chave = f'{prefixo}{separador}{chave}' if prefixo else chave
+        if isinstance(valor, dict):
+            prefixo = nova_chave
+            resultado.update(achatar_dicionario(valor, separador, prefixo=nova_chave))
+        else:
+            resultado[nova_chave] = valor
+        
+    return resultado
+    
+achatar_dicionario(dados)
+
+#%%
 ####################################################################
 
 """ Exercício 8: Ordenação Complexa Multinível
