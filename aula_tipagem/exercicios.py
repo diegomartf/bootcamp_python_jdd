@@ -225,7 +225,6 @@ def achatar_dicionario(dados, separador='.', prefixo = ''):
     for chave, valor in dados.items():
         nova_chave = f'{prefixo}{separador}{chave}' if prefixo else chave
         if isinstance(valor, dict):
-            prefixo = nova_chave
             resultado.update(achatar_dicionario(valor, separador, prefixo=nova_chave))
         else:
             resultado[nova_chave] = valor
