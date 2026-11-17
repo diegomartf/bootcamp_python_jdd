@@ -13,3 +13,17 @@ def calcular_desconto(preco: float, desconto: float) -> float:
 
 calcular_desconto(100,15)
 # %%
+# 2. Verificador de Palíndromos (Nível: Iniciante)
+# Escreva uma função chamada eh_palindromo que receba uma palavra ou frase (string) e retorne True se ela for um palíndromo (lê-se igual de trás para frente) ou False caso contrário.
+
+# Dica: Ignore espaços em branco e letras maiúsculas/minúsculas.
+
+# Exemplo de entrada: eh_palindromo("Ame a ema")
+
+# Saída esperada: True
+
+palavra = 'diego'
+
+palavra_invertida = reversed(palavra)
+
+print(palavra_invertida)
