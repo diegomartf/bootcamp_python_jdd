@@ -20,7 +20,6 @@ calcular_desconto(100,15)
 
 # Exemplo de entrada: eh_palindromo("Ame a ema")
 
-# Saída esperada: True
 
 def e_palindromo(palavra: str):
     palavra_invertida = ''
@@ -32,6 +31,35 @@ def e_palindromo(palavra: str):
     else:
         print('Não é palindromo')
 
+
 e_palindromo('diego')
 e_palindromo('ana')
 
+#%%
+# 3. Análise de Lista Numérica (Nível: Básico/Intermediário)
+
+# Crie uma função chamada analisar_numeros que receba uma lista de números e
+# retorne um dicionário contendo três chaves: "maior", "menor" e "media".
+
+# Exemplo de entrada: analisar_numeros([10, 20, 30, 40])
+
+# Saída esperada: {'maior': 40, 'menor': 10, 'media': 25.0}
+
+numeros = [10, 20, 30, 40]
+
+def analisar_numeros(numeros: list):
+
+    numeros_ordenados = sorted(numeros)
+
+    dicionario_maior_menor_media = {}
+
+    dicionario_maior_menor_media = {'maior': numeros_ordenados[-1],
+                                'menor': numeros_ordenados[0],
+                                'media': sum(numeros_ordenados) / 
+                                len(numeros_ordenados)}
+
+    return dicionario_maior_menor_media
+
+analisar_numeros(numeros)
+
+#%%
