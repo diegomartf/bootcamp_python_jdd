@@ -21,7 +21,7 @@ calcular_desconto(100,15)
 # Exemplo de entrada: eh_palindromo("Ame a ema")
 
 
-def e_palindromo(palavra: str):
+def e_palindromo(palavra: str) -> str:
     palavra_invertida = ''
     for i in range(len(palavra)-1, -1, -1):
         palavra_invertida = palavra_invertida + palavra[i]
@@ -49,9 +49,9 @@ numeros = [10, 20, 30, 40]
 
 def analisar_numeros(numeros: list):
 
-    numeros_ordenados = sorted(numeros)
+    numeros_ordenados: list = sorted(numeros)
 
-    dicionario_maior_menor_media = {}
+    dicionario_maior_menor_media: dict = {}
 
     dicionario_maior_menor_media = {'maior': numeros_ordenados[-1],
                                 'menor': numeros_ordenados[0],
@@ -63,3 +63,32 @@ def analisar_numeros(numeros: list):
 analisar_numeros(numeros)
 
 #%%
+# 4. Validador de Senha Forte (Nível: Intermediário)
+# Desenvolva uma função chamada validar_senha que receba uma string e
+# verifique se ela atende a todos os critérios abaixo, retornando True ou False:
+
+# Ter no mínimo 8 caracteres.
+
+# Conter pelo menos uma letra maiúscula.
+
+# Conter pelo menos um número.
+
+# Exemplo de entrada: validar_senha("Python123")
+
+# Saída esperada: True
+
+def validar_senha(senha: str) -> bool:
+    valida = True
+
+    if len(senha) < 8:
+       valida = False
+
+    if not any(caractere.isupper() for caractere in senha):
+       valida = False
+
+    if not any(caractere.isdigit() for caractere in senha):
+        valida = False
+    
+    return valida
+
+validar_senha("Python123")
