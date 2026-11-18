@@ -22,8 +22,16 @@ calcular_desconto(100,15)
 
 # Saída esperada: True
 
-palavra = 'diego'
+def e_palindromo(palavra: str):
+    palavra_invertida = ''
+    for i in range(len(palavra)-1, -1, -1):
+        palavra_invertida = palavra_invertida + palavra[i]
 
-palavra_invertida = reversed(palavra)
+    if palavra_invertida == palavra:
+        print('É palindromo')
+    else:
+        print('Não é palindromo')
 
-print(palavra_invertida)
+e_palindromo('diego')
+e_palindromo('ana')
+
